@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  pyspark:
+    image: jupyter/pyspark-notebook
+    ports:
+      - 8888:8888
+      - 4040:4040
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - RESTARTABLE=yes
+    networks:
+      - data-science
+    volumes:
+      - /media/luis/MAIN-DATA/DEVOPS/DOCKER/PYSPARK:/home/jovyan/work
+  sqlserver:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    user: 1000:1000
+    environment:
+      - MYSQL_USERNAME=root
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_HOST=%
+    volumes:
+      - /media/luis/MAIN-DATA/DEVOPS/DOCKER/MYSQL:/var/lib/mysql
+    networks:
+      - data-science
+  myadmin:
+    image: phpmyadmin
+    ports:
+      - 80:80
+    networks:
+      - data-science
+    environment:
+      - PMA_HOST=sqlserver
+    depends_on:
+      - sqlserver
+networks:
+  data-science: 

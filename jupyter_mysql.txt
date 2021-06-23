@@ -1,0 +1,36 @@
+# CONFIGURATION FOR THE DOCKER CONTAINERS
+
+docker network create data-science
+
+##
+# jupyter lab with Pyspark 
+
+sudo docker run -d \
+-p 8887:8888 \
+-p 4040:4040 \
+-e JUPYTER_ENABLE_LAB=yes \
+-e RESTARTABLE=yes  \
+-v /media/luis/MAIN-DATA/DEVOPS/PYSPARK:/home/jovyan/work \
+--name pyspark \
+--net data-science \
+jupyter/pyspark-notebook
+
+
+# mysql server
+
+docker run -d \
+--name mysql  \
+-e MYSQL_ROOT_PASSWORD=root\
+-e MYSQL_ROOT_HOST=% \
+-v /media/luis/MAIN-DATA/DEVOPS/MYSQL:/var/lib/mysql \
+-p 3307:3306 \
+--net data-science \
+mysql:latest
+
+# PhP my admin
+
+docker run -d \
+-p 8081:80 \
+--name myadmin \
+--net data-science \
+phpmyadmin
