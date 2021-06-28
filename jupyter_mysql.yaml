@@ -1,13 +1,15 @@
 version: '3.9'
 services:
   pyspark:
-    image: jupyter/pyspark-notebook
+    image: pyspark:1.0 #jupyter/pyspark-notebook
     ports:
       - 8888:8888
       - 4040:4040
+    user: root
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - RESTARTABLE=yes
+      - GRANT_SUDO=yes
     networks:
       - data-science
     volumes:
