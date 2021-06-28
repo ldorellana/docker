@@ -22,3 +22,12 @@ docker-compose -f jupyter_mysql.yaml up
 To eliminate the containers:
 docker-compose -f jupyter_mysql.yaml down
 ```
+
+### Dockerfile
+
+Example of a dockerfile build. Using the pyspark container and installing some libraries
+
+```
+To build an image:
+docker build -t name:version docker_file_location
+```
