@@ -31,3 +31,20 @@ Example of a dockerfile build. Using the pyspark container and installing some l
 To build an image:
 docker build -t name:version docker_file_location
 ```
+
+
+### Container Registry
+
+It is possible to have a private repository for the docker images.  
+Azure calls them "Container Registry"
+
+```
+docker login {container registry url}
+
+docker tag {image:tag} {container registry url}/{image:tag}
+
+docker push {container registry url}/{image:tag}
+
+# to pull it from the private repository
+docker pull datafree.azurecr.io/hello-world
+```
