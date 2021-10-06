@@ -14,6 +14,7 @@ RUN conda update -y --all && \
     conda install -y plotly && \
     conda install -y "jupyterlab>=3" "ipywidgets>=7.6" && \
     conda install -y python-kaleido && \
-    conda install -y -c districtdatalabs yellowbrick
+    conda install -y -c districtdatalabs yellowbrick && \
+    conda install -c conda-forge jupyterlab-git
 
 
