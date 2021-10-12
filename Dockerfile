@@ -4,7 +4,7 @@ USER root
 
 ENV JUPYTER_ENABLE_LAB=yes \
     RESTARTABLE=yes \
-    GRANT_SUDO=yes
+    GRANT_SUDO=no 
 
 RUN apt-get update --yes && \
     apt-get install --yes --no-install-recommends
