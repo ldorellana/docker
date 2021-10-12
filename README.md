@@ -24,6 +24,7 @@ An application made from and image that it is possible to run. A running image.
 A network that docker creates to manage the communication between the containers and also de host
 
 ## COMMANDS
+Command cheatsheet
 
 | command                                                                                              	| description                                                	|
 |------------------------------------------------------------------------------------------------------	|------------------------------------------------------------	|
@@ -39,5 +40,4 @@ A network that docker creates to manage the communication between the containers
 | `docker container prune`                                                                             	| delete all not running containers                          	|
 | `docker system df`                                                                                   	| summary of docker resources                                	|
 | `docker network`  <br>`ls`  <br>`inspect {net_name}`                                                 	|                                                            	|
-|                                                                                                      	|                                                            	|
-|                                                                                                      	|                                                            	|
+
