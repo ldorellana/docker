@@ -15,6 +15,8 @@ RUN conda update -y --all && \
     conda install -y "jupyterlab>=3" "ipywidgets>=7.6" && \
     conda install -y python-kaleido && \
     conda install -y -c districtdatalabs yellowbrick && \
-    conda install -c conda-forge jupyterlab-git
-
+    conda install -c conda-forge jupyterlab-git && \
+    conda install jupyterlab_templates && \
+    jupyter labextension install jupyterlab_templates && \
+    jupyter serverextension enable --py jupyterlab_templates
 
